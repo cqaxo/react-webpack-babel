@@ -40,7 +40,7 @@ npm start
 npm run dev
 ```
 
-Open the web browser to `http://localhost:8888/`
+Open the web browser to `http://localhost:3000/`
 
 ### To test
 To run unit tests:
