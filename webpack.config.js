@@ -7,7 +7,7 @@ var DashboardPlugin = require('webpack-dashboard/plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HOST = process.env.HOST || "127.0.0.1";
-const PORT = process.env.PORT || "8888";
+const PORT = process.env.PORT || "3000";
 
 loaders.push({
   test: /\.scss$/,
@@ -18,7 +18,7 @@ loaders.push({
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    './src/index.jsx', // your app's entry point
+    './src/index.js', // your app's entry point
   ],
   devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
   output: {
