@@ -20,6 +20,7 @@
   "license": "MIT",
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
+    "babel-preset-stage-1": "^6.1.18",
     "node-sass": "^4.3.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -27,7 +28,6 @@
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
     "sass-loader": "^6.0.2"
-    "babel-preset-stage-1": "^6.1.18",
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
