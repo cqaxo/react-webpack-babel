@@ -1,33 +1,33 @@
 "use strict";
-var webpack = require('webpack');
-var path = require('path');
-var loaders = require('./webpack.loaders');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require("webpack");
+var path = require("path");
+var loaders = require("./webpack.loaders");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var DashboardPlugin = require("webpack-dashboard/plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "3000";
 
 loaders.push({
   test: /\.scss$/,
-  loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
-  exclude: ['node_modules']
+  loaders: ["style-loader", "css-loader?importLoaders=1", "sass-loader"],
+  exclude: ["node_modules"]
 });
 
 module.exports = {
   entry: [
-    'react-hot-loader/patch',
-    './src/index.js', // your app's entry point
+    "react-hot-loader/patch",
+    "./src/index.js" // your app's entry point
   ],
-  devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
+  devtool: process.env.WEBPACK_DEVTOOL || "eval-source-map",
   output: {
-    publicPath: '/',
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+    publicPath: "/",
+    path: path.join(__dirname, "public"),
+    filename: "bundle.js"
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: [".js", ".jsx"]
   },
   module: {
     loaders
@@ -50,16 +50,16 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin({
-      filename: 'style.css',
+      filename: "style.css",
       allChunks: true
     }),
     new DashboardPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/template.html',
+      template: "./index.html",
       files: {
-        css: ['style.css'],
-        js: [ "bundle.js"],
+        css: ["style.css"],
+        js: ["bundle.js"]
       }
-    }),
+    })
   ]
 };
